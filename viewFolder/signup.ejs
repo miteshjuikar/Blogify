@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Sign Up Page</title>
+</head>
+<body>
+    <%- include('./partials/body') %>
+    <%- include('./partials/navbar') %>
+    <div class="container mt-4">
+        <form action="/user/signup" method="POST" style="background-color: #f8f9fa; padding: 30px; border-radius: 8px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);">
+            <h2 style="text-align: center; color: #343a40; margin-bottom: 20px;">Registration Form</h2>
+          
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" class="form-control" name="fullName" id="fullName" placeholder="Enter your name" 
+                     style="border: 2px solid #007bff; border-radius: 5px;">
+            </div>
+          
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" 
+                     style="border: 2px solid #007bff; border-radius: 5px;">
+            </div>
+          
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" name="password" class="form-control" id="password" placeholder="Password" 
+                     style="border: 2px solid #007bff; border-radius: 5px;">
+            </div>
+          
+            <button type="submit" class="btn btn-success btn-block" 
+                    style="background-color: #28a745; border-color: #28a745; color: white;">Submit</button>
+          </form>
+    </div>
+</body>
+</html>
