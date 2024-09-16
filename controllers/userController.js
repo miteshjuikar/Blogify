@@ -6,6 +6,7 @@ async function handleCreateUser(req,res){
         fullName,
         email,
         password
+        
     });
     return res.redirect("/");
 }
