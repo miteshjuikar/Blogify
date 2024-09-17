@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Home Page</title>
+</head>
+<body>
+    <%- include('./partials/navbar') %> 
+    <div class="container mt-4">
+        <h1><%= blog.title %></h1>
+        <img src="<%= blog.coverImage %>" alt="Cover Image" width="700px">
+        <pre><%= blog.body %></pre>
+    </div>
+    <div class="container mt-4">
+        <img src="<%= blog.createdBy.profileImage %>" alt="Profile Image" width="100px"> <%= blog.createdBy.fullName %>
+    </div>
+
+    <%- include('./partials/body') %>
+</body>
+</html>

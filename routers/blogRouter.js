@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { handleCreateNewBlog } = require('../controllers/blogController');
+const { handleCreateNewBlog, handleSingleBlogDetails } = require('../controllers/blogController');
 
 const router = Router();
 
@@ -17,9 +17,12 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
-router.route("/add-new")
-.get((req,res) => res.status(201).render("addBlog", { user: req.user}))
-.post(upload.single("coverImage"), handleCreateNewBlog);
+
+router.get("/add-new",(req,res) => res.render("addBlog", { user: req.user}));
+
+router.post("/", upload.single("coverImage"), handleCreateNewBlog);
+router.get("/:id", handleSingleBlogDetails);
+
 
 module.exports = router;
 
