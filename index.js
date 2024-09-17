@@ -7,6 +7,7 @@ const app = express();
 const PORT = "8080";
 
 const userRoute = require("./routers/userRouter");
+const blogRoute = require("./routers/blogRouter");
 const { checkForAuthnticationCookie } = require("./middlewares/authMiddleware");
 //Connection to mongoDB
 const { connectToMongoDB } = require("./connection");
@@ -28,6 +29,8 @@ app.get("/", (req, res) => {
     res.render("home", { user: req.user });
 });
 
+
 app.use("/user", userRoute);
+app.use("/blog", blogRoute);
 
 app.listen(PORT, () => console.log(`Server is stated at PORT: ${PORT}`));
