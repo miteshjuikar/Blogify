@@ -13,7 +13,7 @@ const { checkForAuthnticationCookie } = require("./middlewares/authMiddleware");
 const { connectToMongoDB } = require("./connection");
 const Blog = require("./models/blogModel");
 
-connectToMongoDB("mongodb://localhost:27017/blogify")
+connectToMongoDB("mongodb+srv://miteshjuikar:MyMongoDB@mycluster.krravcy.mongodb.net/blogify")
                 .then(console.log("MongoDB connected successfully"))
                 .catch((err)=>console.log(`Error: ${err}`)
                 );
